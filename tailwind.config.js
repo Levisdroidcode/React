@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [ './src/**/*.{html,js}'],
+  content: [
+    "./src/**/*.{ts,tsx,html,js,jsx}",
+  ],
   theme: {
     colors: {
       'blue': '#1fb6ff',
@@ -17,7 +19,6 @@ module.exports = {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
     },
-
     extend: {
       spacing: {
         '8xl': '96rem',
@@ -25,9 +26,11 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
-      }
+      },
     },
   },
-  plugins: [],
-}
-
+  plugins: [
+    require('flowbite/plugin'),
+  ],
+  darkMode: 'class', // Move darkMode configuration here
+};
